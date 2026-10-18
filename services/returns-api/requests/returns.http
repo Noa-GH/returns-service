@@ -1,0 +1,2 @@
+### Health check (implemented in RET-6; returns 404 until then)
+GET {{baseUrl}}/api/v1/health

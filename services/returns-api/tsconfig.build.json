@@ -1,0 +1,18 @@
+{
+  // Compiles src/ to dist/ for `npm start`. Tests live in tsconfig.test.json.
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "src",
+    "outDir": "dist",
+    // Kept inside dist/ so deleting dist/ also resets the incremental build cache.
+    "tsBuildInfoFile": "dist/.tsbuildinfo",
+    // Source maps let WebStorm's debugger stop on .ts lines when running dist/.
+    "declarationMap": true,
+    "sourceMap": true,
+    "types": ["node"]
+  },
+  "include": ["src"],
+  // Lets src/ import @returns/shared without compiling shared's files into this project.
+  "references": [{ "path": "../../packages/shared/tsconfig.build.json" }]
+}

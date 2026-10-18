@@ -1,0 +1,10 @@
+{
+  // Type-checks tests (and the src files they import) without emitting anything.
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.test.tsbuildinfo",
+    "types": ["node"]
+  },
+  "include": ["tests"]
+}

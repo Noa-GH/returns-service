@@ -1,0 +1,10 @@
+{
+  // "Solution" config: compiles nothing itself, only lists the workspaces.
+  // `tsc -b` (npm run typecheck) builds them in dependency order.
+  "files": [],
+  "references": [
+    { "path": "./packages/shared" },
+    { "path": "./services/returns-api" },
+    { "path": "./apps/returns-web" }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  // Browser code in src/ (including *.test.tsx). Vite does the actual compiling,
+  // so TypeScript only type-checks here (noEmit).
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "types": ["vite/client"],
+
+    // Bundler mode: Vite resolves imports, not Node.
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": ["src"],
+  "references": [{ "path": "../../packages/shared/tsconfig.build.json" }]
+}

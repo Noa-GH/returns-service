@@ -1,0 +1,17 @@
+{
+  // Compiles src/ to dist/. "composite" lets other workspaces reference this project.
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "src",
+    "outDir": "dist",
+    // Kept inside dist/ so deleting dist/ also resets the incremental build cache.
+    "tsBuildInfoFile": "dist/.tsbuildinfo",
+    // Lets "Go to Definition" jump from the compiled .d.ts back to the .ts source.
+    "declarationMap": true,
+    "sourceMap": true,
+    // Shared code runs in both Node and the browser, so no Node globals here.
+    "types": []
+  },
+  "include": ["src"]
+}

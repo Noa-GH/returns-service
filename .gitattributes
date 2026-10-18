@@ -1,0 +1,7 @@
+# Store and check out text files with LF line endings, even on Windows.
+# Without this, Git on Windows converts to CRLF and Prettier/ESLint flag every line.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.ico binary
